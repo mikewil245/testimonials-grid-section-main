@@ -3,6 +3,8 @@
 body {
   background: rgb(236, 242, 248);
   font-family: "Barlow Semi Condensed", serif;
+  display: grid;
+  place-items: center;
   min-height: 100vh;
   font-size: clamp(1rem, 2vw + 1rem, 1.5rem);
 }
@@ -11,7 +13,7 @@ body {
   max-width: 75rem;
   display: grid;
   gap: 1.2rem;
-  margin: 3rem 0;
+  /*margin: 3rem 0;*/
   padding: 0 1.2rem;
   p {
     line-height: 1.5;
@@ -134,9 +136,10 @@ body {
   }
 }
 
-@media (min-width: 600px) {
+@media (min-width: 768px) {
   .grid-container {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+
     .box.one {
       grid-column: span 2;
     }
@@ -153,8 +156,8 @@ body {
 
 @media (min-width: 800px) {
   .grid-container {
-    margin: 5rem auto;
-    grid-template-columns: repeat(4, 1fr);
+    /*margin: 5rem auto;*/
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 
     /*Daniel*/
     .box.one {
